@@ -41,10 +41,11 @@ public class DestroyPellet : MonoBehaviour {
 			score += smallPelletScore;
 		} else if (other.name == "SuperPellet(Clone)") {
 			score += superPelletScore;
+		Destroy (other.gameObject);
 
 			if (superPowered == false) {
 				superPowered = true;
-				Debug.Log("superPower");
+				Debug.Log("superPower"); //testing to make sure my condition works
 				counter++;
 				//while (counter < 20) {
 					//if (other.tag == "enemy") {
@@ -54,7 +55,7 @@ public class DestroyPellet : MonoBehaviour {
 							counter = 0;
 							superPowered = false;
 			//change "A" value of ghost colors to .2 and then back to original in half second intervals
-		Destroy (other.gameObject);
+		
 
 						}
 					}
