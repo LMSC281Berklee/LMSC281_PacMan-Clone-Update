@@ -11,7 +11,7 @@ public class EatGhosts : MonoBehaviour {
 
 	 //Update is called once per frame
 	void OnTriggerEnter(Collider other) {
-		while (DestroyPellet.superPowered == true && DestroyPellet.counter < 20) {
+		if (DestroyPellet.superPowered == true && DestroyPellet.counter < 20) {
 			if (other.tag == "enemy") {
 			DestroyPellet.score += DestroyPellet.ghostEatingScore;
 			Destroy (other.gameObject);

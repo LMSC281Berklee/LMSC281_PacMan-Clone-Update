@@ -44,6 +44,7 @@ public class DestroyPellet : MonoBehaviour {
 
 			if (superPowered == false) {
 				superPowered = true;
+				Debug.Log("superPower");
 				counter++;
 				//while (counter < 20) {
 					//if (other.tag == "enemy") {
@@ -53,7 +54,7 @@ public class DestroyPellet : MonoBehaviour {
 							counter = 0;
 							superPowered = false;
 			//change "A" value of ghost colors to .2 and then back to original in half second intervals
-			Destroy (other.gameObject);
+		Destroy (other.gameObject);
 
 						}
 					}
