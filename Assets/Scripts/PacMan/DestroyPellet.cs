@@ -14,10 +14,10 @@ public class DestroyPellet : MonoBehaviour {
 	//determine individual prefab values
 	public int smallPelletScore = 10;
 	public int superPelletScore = 100;
-	public int ghostEatingScore = 500;
+	static public int ghostEatingScore = 500;
 	//public int colorTimer = 0;
-	public bool superPowered = false;
-	public int counter = 0;
+	static public bool superPowered = false;
+	static public int counter = 0;
 	//public Color pinkyColor = new Color(255, 126, 212, 225);
 	//public Color blinkyColor = new Color (255, 0, 28, 191);
 	//public Color inkyColor = new Color(69, 231, 255, 199);
@@ -28,7 +28,7 @@ public class DestroyPellet : MonoBehaviour {
 
 
 	//starting score
-	public int score = 0;
+	static public int score = 0;
 
 	//send the score to the screen on every update cycle
 	void Update () {
@@ -41,17 +41,20 @@ public class DestroyPellet : MonoBehaviour {
 			score += smallPelletScore;
 		} else if (other.name == "SuperPellet(Clone)") {
 			score += superPelletScore;
-			Destroy (other.gameObject);
+
 			if (superPowered == false) {
 				superPowered = true;
 				counter++;
-				while (counter < 20) {
-					if (other.tag == "enemy") {
-						score += ghostEatingScore;
-						Destroy (other.gameObject);
+				//while (counter < 20) {
+					//if (other.tag == "enemy") {
+						//score += ghostEatingScore;
+						//Destroy (other.gameObject);
 						if (counter >= 20) {
 							counter = 0;
 							superPowered = false;
+			//change "A" value of ghost colors to .2 and then back to original in half second intervals
+			Destroy (other.gameObject);
+
 						}
 					}
 
@@ -59,5 +62,5 @@ public class DestroyPellet : MonoBehaviour {
 			}
 
 		}
-	}
-}
+	
+
