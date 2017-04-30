@@ -12,6 +12,7 @@ public class GhostControl : MonoBehaviour {
 	public float howLong = 1.0f;
 	public float howFast = 8.0f;
 
+
 	//determine the update frequency 
 	private float nextUpdate = 1.0f;
 

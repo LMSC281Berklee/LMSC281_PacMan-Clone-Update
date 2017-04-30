@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class EatGhosts : MonoBehaviour {
 
+
+
+
 	// Use this for initialization
 	void Start () {
 		
@@ -14,7 +17,7 @@ public class EatGhosts : MonoBehaviour {
 		if (DestroyPellet.superPowered == true && DestroyPellet.counter < 20) {
 			if (other.tag == "enemy") {
 			DestroyPellet.score += DestroyPellet.ghostEatingScore;
-			Destroy (other.gameObject);
+			
 
 			}
 			

@@ -29,7 +29,10 @@ public class GhostControlNew : MonoBehaviour {
 	bool leftObject;
 	bool rightObject;
 	bool forwardObject;
-	
+
+
+
+
 	//initialize the ghost's transform
 	void Awake () {
 		ghostTransform = transform;
@@ -84,5 +87,18 @@ public class GhostControlNew : MonoBehaviour {
 		}
 
 
+	}
+
+	void OnTriggerEnter (Collider other)
+	{
+		if (DestroyPellet.superPowered == true && DestroyPellet.counter < 20) 
+		{
+
+			if (other.tag == "Player") 
+			{
+				ghostTransform.position = new Vector3 (-5, 1, 4);
+			}
+				
+		}
 	}
 }
