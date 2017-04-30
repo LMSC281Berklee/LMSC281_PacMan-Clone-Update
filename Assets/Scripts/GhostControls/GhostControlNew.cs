@@ -56,7 +56,29 @@ public class GhostControlNew : MonoBehaviour {
 		case "Blinky":
 			//we need to set this ghost's target position. Blinky looks directly at the player
 			//rotate toward target once per second, this also allows us to move in a forward direction more readily
-			ghostTransform.rotation = Quaternion.Slerp(ghostTransform.rotation, Quaternion.LookRotation(playerTransform.position - ghostTransform.position), rotationSpeed * Time.deltaTime);
+
+			//ghostTransform.rotation = Quaternion.Slerp (ghostTransform.rotation, Quaternion.LookRotation (playerTransform.position - ghostTransform.position), rotationSpeed * Time.deltaTime);
+			targetPoint = new Vector3 ((target.transform.position.x), 0, (target.transform.position.z)) - transform.position;
+			targetRotation = Quaternion.LookRotation (targetPoint);
+			ghostTransform.rotation = Quaternion.Slerp(ghostTransform.rotation, targetRotation, Time.deltaTime * 2.0f);
+			//Debug.Log (targetPoint);
+			//ghostTransform.position += ghostTransform.forward * movementSpeed * Time.deltaTime;
+
+			if (!forwardObject) {//move forward if no obstacle
+				Debug.Log("hit forward");
+				ghostTransform.position += ghostTransform.forward * movementSpeed * Time.deltaTime;
+			} else if (!rightObject) {//move to the right if no obstacle
+				Debug.Log("hit right");
+				ghostTransform.position += ghostTransform.right * movementSpeed * Time.deltaTime;
+			} else if (!leftObject) {//move to the left if no obstacle
+				//ghostTransform.transform.Rotate (0, 90, 0);
+				Debug.Log("hit left");
+				ghostTransform.position += ghostTransform.TransformDirection(Vector3.left) * movementSpeed * Time.deltaTime;
+			} else {//turn around if blocked in all directions
+				Debug.Log("hit back");
+				ghostTransform.position += ghostTransform.TransformDirection(Vector3.back) * movementSpeed * Time.deltaTime;
+			}
+
 			break;
 		case "Pinky":
 			targetPoint = new Vector3((target.transform.position.x-1), 0, (target.transform.position.z-1)) - transform.position;
@@ -68,21 +90,17 @@ public class GhostControlNew : MonoBehaviour {
 		}
 
 		//move toward target
-		if (!forwardObject) {//move forward if no obstacle
-			ghostTransform.position += ghostTransform.forward * movementSpeed * Time.deltaTime;
-		}
-		else if (!rightObject) {//move to the right if no obstacle
-			ghostTransform.position += ghostTransform.right * movementSpeed * Time.deltaTime;
-		}
-		else if (!leftObject) {//move to the left if no obstacle
-			ghostTransform.transform.Rotate(0,90,0);
-			ghostTransform.position += ghostTransform.forward * movementSpeed * Time.deltaTime;
-		}
-		else {//turn around if blocked in all directions
-			ghostTransform.transform.Rotate(0,180,0);
-			ghostTransform.position += ghostTransform.forward * movementSpeed * Time.deltaTime;
-		}
-
-
+			
+//			if (!forwardObject) {//move forward if no obstacle
+//				ghostTransform.position += ghostTransform.forward * movementSpeed * Time.deltaTime;
+//			} else if (!rightObject) {//move to the right if no obstacle
+//				ghostTransform.position += ghostTransform.right * movementSpeed * Time.deltaTime;
+//			} else if (!leftObject) {//move to the left if no obstacle
+//				ghostTransform.transform.Rotate (0, 90, 0);
+//				ghostTransform.position += ghostTransform.forward * movementSpeed * Time.deltaTime;
+//			} else {//turn around if blocked in all directions
+//				ghostTransform.transform.Rotate (0, 180, 0);
+//				ghostTransform.position += ghostTransform.forward * movementSpeed * Time.deltaTime;
+//			}
 	}
 }
