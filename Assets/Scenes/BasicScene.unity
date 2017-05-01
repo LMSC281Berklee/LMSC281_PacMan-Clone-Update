@@ -101,8 +101,9 @@ GameObject:
   - component: {fileID: 26}
   - component: {fileID: 24}
   - component: {fileID: 22}
-  - component: {fileID: 21}
   - component: {fileID: 25}
+  - component: {fileID: 20}
+  - component: {fileID: 21}
   m_Layer: 0
   m_Name: Clyde
   m_TagString: Untagged
@@ -110,6 +111,19 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 0
+--- !u!136 &20
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 19}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 0.5
+  m_Height: 1.9999999
+  m_Direction: 1
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!143 &21
 CharacterController:
   m_ObjectHideFlags: 0
@@ -188,7 +202,7 @@ Transform:
   m_GameObject: {fileID: 19}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -1, y: 1.5, z: 2}
-  m_LocalScale: {x: 1.5, y: 1.2, z: 1.5}
+  m_LocalScale: {x: 2, y: 1.5, z: 2}
   m_Children: []
   m_Father: {fileID: 1810451910}
   m_RootOrder: 3
@@ -203,8 +217,8 @@ GameObject:
   - component: {fileID: 36}
   - component: {fileID: 34}
   - component: {fileID: 32}
-  - component: {fileID: 37}
   - component: {fileID: 35}
+  - component: {fileID: 37}
   - component: {fileID: 30}
   m_Layer: 0
   m_Name: Pinky
@@ -286,7 +300,7 @@ Transform:
   m_GameObject: {fileID: 29}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 3, y: 1.5, z: 2}
-  m_LocalScale: {x: 1.5, y: 1.2, z: 1.5}
+  m_LocalScale: {x: 2, y: 1.5, z: 2}
   m_Children: []
   m_Father: {fileID: 1810451910}
   m_RootOrder: 2
@@ -335,9 +349,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b2530eeeca9c540d1adbf0daed3672a1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  movementSpeed: 10
-  rotationSpeed: 1
-  detectionRange: 10
+  inGhostHouse: 1
 --- !u!136 &41
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -412,7 +424,7 @@ Transform:
   m_GameObject: {fileID: 39}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -3, y: 1.5, z: 2}
-  m_LocalScale: {x: 1.5, y: 1.2, z: 1.5}
+  m_LocalScale: {x: 2, y: 1.5, z: 2}
   m_Children: []
   m_Father: {fileID: 1810451910}
   m_RootOrder: 1
@@ -427,9 +439,10 @@ GameObject:
   - component: {fileID: 56}
   - component: {fileID: 54}
   - component: {fileID: 52}
+  - component: {fileID: 50}
+  - component: {fileID: 55}
   - component: {fileID: 51}
   - component: {fileID: 53}
-  - component: {fileID: 50}
   m_Layer: 0
   m_Name: Inky
   m_TagString: Untagged
@@ -520,6 +533,19 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 49}
   m_Mesh: {fileID: 10208, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!136 &55
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 49}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 0.5
+  m_Height: 1.9999999
+  m_Direction: 1
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!4 &56
 Transform:
   m_ObjectHideFlags: 0
@@ -528,7 +554,7 @@ Transform:
   m_GameObject: {fileID: 49}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 1, y: 1.5, z: 2}
-  m_LocalScale: {x: 1.5, y: 1.2, z: 1.5}
+  m_LocalScale: {x: 2, y: 1.5, z: 2}
   m_Children: []
   m_Father: {fileID: 1810451910}
   m_RootOrder: 0
@@ -731,6 +757,14 @@ Prefab:
         type: 2}
       propertyPath: gravity
       value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 400004, guid: 25c7d5b29d114adbd00050198d76c639, type: 2}
+      propertyPath: m_LocalScale.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 400004, guid: 25c7d5b29d114adbd00050198d76c639, type: 2}
+      propertyPath: m_LocalScale.y
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 25c7d5b29d114adbd00050198d76c639, type: 2}
