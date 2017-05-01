@@ -27,9 +27,10 @@ public class DestroyPellet : MonoBehaviour {
 	void OnTriggerEnter (Collider other) {
 		if (other.name == "BasicPellet(Clone)") {
 			score += smallPelletScore;
+			Destroy (other.gameObject);
 		} else if (other.name == "SuperPellet(Clone)") {
 			score += superPelletScore;
+			Destroy (other.gameObject);
 		}
-		Destroy (other.gameObject);
 	}
 }
