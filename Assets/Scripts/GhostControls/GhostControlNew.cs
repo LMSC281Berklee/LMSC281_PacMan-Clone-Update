@@ -10,8 +10,8 @@ using System.Collections;
 public class GhostControlNew : MonoBehaviour {
 
 	//these variables allow for flexibility in the ghosts' movement and rotation speed, they are public so that they can be applied differently, per ghost
-	int movementSpeed = 3;
-	int rotationSpeed = 3;
+	int movementSpeed = 10;
+	int rotationSpeed = 10;
 
 	//we only want our ghosts to chase when the player is in range, which can be set individually for each ghost
 //	int detectionRange = 10;
