@@ -21,23 +21,21 @@ public class DestroyPellet : MonoBehaviour {
 	static public bool superPowered = false;
 	static public float counter = 20;
 
-
-
-
-
-
 	//starting score
 	static public int score = 0;
-
 
 	//send the score to the screen on every update cycle
 	void Update () {
 		scoreDisplay.text = "Score: " + score;
-
-
-
-
-
+		if (superPowered) {
+			counter -= Time.deltaTime;
+			Debug.Log (counter);
+		}
+		if (counter <= 0) {
+			counter = 20;
+			superPowered = false;
+			Debug.Log ("normal");
+		}
 	}
 
 	//when the player runs into a pellet, add to the score and then destroy
@@ -58,7 +56,6 @@ public class DestroyPellet : MonoBehaviour {
 				superPowered = true;
 
 				Debug.Log("superPower"); //testing to make sure my condition works
-				counter -= Time.deltaTime;
 					
 					if (counter <= 0) 
 					{	
