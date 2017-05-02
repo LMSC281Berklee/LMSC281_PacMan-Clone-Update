@@ -7,6 +7,8 @@
 using UnityEngine;
 using System.Collections;
 
+
+
 public class GhostControlNew : MonoBehaviour {
 
 	//these variables allow for flexibility in the ghosts' movement and rotation speed, they are public so that they can be applied differently, per ghost
