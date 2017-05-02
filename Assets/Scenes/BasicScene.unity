@@ -104,6 +104,7 @@ GameObject:
   - component: {fileID: 20}
   - component: {fileID: 21}
   - component: {fileID: 23}
+  - component: {fileID: 25}
   m_Layer: 0
   m_Name: Clyde
   m_TagString: Ghosty
@@ -194,6 +195,21 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 19}
   m_Mesh: {fileID: 10208, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &25
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 19}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dc9d70806d8b34b9f89e937f8172d422, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ColorStart: {r: 0, g: 0, b: 1, a: 1}
+  colorEnd: {r: 1, g: 1, b: 1, a: 1}
+  duration: 1
+  rend: {fileID: 0}
 --- !u!4 &26
 Transform:
   m_ObjectHideFlags: 0
@@ -220,6 +236,7 @@ GameObject:
   - component: {fileID: 35}
   - component: {fileID: 37}
   - component: {fileID: 30}
+  - component: {fileID: 31}
   m_Layer: 0
   m_Name: Pinky
   m_TagString: Ghosty
@@ -239,6 +256,21 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   movementSpeed: 5
+--- !u!114 &31
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 29}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dc9d70806d8b34b9f89e937f8172d422, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ColorStart: {r: 0, g: 0, b: 1, a: 1}
+  colorEnd: {r: 1, g: 1, b: 1, a: 1}
+  duration: 1
+  rend: {fileID: 0}
 --- !u!23 &32
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -331,6 +363,7 @@ GameObject:
   - component: {fileID: 41}
   - component: {fileID: 40}
   - component: {fileID: 43}
+  - component: {fileID: 45}
   m_Layer: 0
   m_Name: Blinky
   m_TagString: Ghosty
@@ -416,6 +449,21 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 39}
   m_Mesh: {fileID: 10208, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &45
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 39}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dc9d70806d8b34b9f89e937f8172d422, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ColorStart: {r: 0, g: 0, b: 1, a: 1}
+  colorEnd: {r: 1, g: 1, b: 1, a: 1}
+  duration: 1
+  rend: {fileID: 0}
 --- !u!4 &46
 Transform:
   m_ObjectHideFlags: 0
@@ -443,6 +491,7 @@ GameObject:
   - component: {fileID: 55}
   - component: {fileID: 51}
   - component: {fileID: 53}
+  - component: {fileID: 57}
   m_Layer: 0
   m_Name: Inky
   m_TagString: Ghosty
@@ -559,6 +608,21 @@ Transform:
   m_Father: {fileID: 1810451910}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &57
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 49}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dc9d70806d8b34b9f89e937f8172d422, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ColorStart: {r: 0, g: 0, b: 1, a: 1}
+  colorEnd: {r: 1, g: 1, b: 1, a: 1}
+  duration: 1
+  rend: {fileID: 0}
 --- !u!1 &59
 GameObject:
   m_ObjectHideFlags: 0
@@ -1372,6 +1436,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   lifeText: {fileID: 1214159326}
   endScreen: {fileID: 1846598162}
+--- !u!114 &588214113
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 588214107}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5c572b94ca5cc4f12beeac60af01c60b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &748861590 stripped
 GameObject:
   m_PrefabParentObject: {fileID: 100000, guid: 25c7d5b29d114adbd00050198d76c639, type: 2}
