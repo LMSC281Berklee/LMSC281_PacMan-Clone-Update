@@ -27,8 +27,8 @@ public class GhostControlNew : MonoBehaviour {
 //	private GameObject target;
 //	private Vector3 targetPoint;
 //	private Quaternion targetRotation;
-//
-//	//need a check to see if a wall is blocking a path
+
+	//need a check to see if a wall is blocking a path
 	bool leftObject;
 	bool rightObject;
 	bool forwardObject;

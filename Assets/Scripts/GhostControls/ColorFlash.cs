@@ -10,8 +10,6 @@ public class ColorFlash : MonoBehaviour {
 	//define ending color for lerp flash
 	public Color colorEnd = Color.white;
 
-	 
-
 	public float duration = 1.0F;
 	public Renderer rend;
 
@@ -20,13 +18,11 @@ public class ColorFlash : MonoBehaviour {
 		rend = GetComponent<Renderer>();
 	}
 	void Update() {
+		
 		if (DestroyPellet.superPowered == true && DestroyPellet.counter < 20)
 		{
-			
 			float lerp = Mathf.PingPong (Time.time, duration) / duration;
 			rend.material.color = Color.Lerp (ColorStart, colorEnd, lerp);
-
 			}
-		}
-
+	}
 }
