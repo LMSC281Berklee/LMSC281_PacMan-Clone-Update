@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 2300000}
   m_Layer: 0
   m_Name: Sphere
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -32,7 +32,7 @@ GameObject:
   - component: {fileID: 9200000}
   - component: {fileID: 12400000}
   - component: {fileID: 8100000}
-  - component: {fileID: 11400000}
+  - component: {fileID: 114558055631182354}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -52,6 +52,8 @@ GameObject:
   m_Component:
   - component: {fileID: 400004}
   - component: {fileID: 14300000}
+  - component: {fileID: 114038040090228034}
+  - component: {fileID: 114691828893511890}
   m_Layer: 0
   m_Name: First Person Controller
   m_TagString: Untagged
@@ -101,7 +103,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 100004}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -2, y: 1, z: -1}
+  m_LocalPosition: {x: -2, y: 1.5, z: -2}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 400002}
@@ -213,22 +215,6 @@ Behaviour:
 --- !u!1002 &9200001
 EditorExtensionImpl:
   serializedVersion: 6
---- !u!114 &11400000
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 100002}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 885b1972ad11a921d000d37b8d76c639, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  target: {fileID: 400000}
-  distance: 5
-  height: 40
-  heightDamping: 2
-  rotationDamping: 3
 --- !u!1002 &11400001
 EditorExtensionImpl:
   serializedVersion: 6
@@ -285,3 +271,47 @@ Prefab:
 --- !u!1002 &100100001
 EditorExtensionImpl:
   serializedVersion: 6
+--- !u!114 &114038040090228034
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 100004}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a91d04168272d41fea7e49d6fefdf1a5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  scoreDisplay: {fileID: 0}
+  smallPelletScore: 10
+  superPelletScore: 100
+--- !u!114 &114558055631182354
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 100002}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 41b8678736668d9419579314b37f2443, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  target: {fileID: 400000}
+  distance: 10
+  height: 40
+  heightDamping: 2
+  rotationDamping: 3
+--- !u!114 &114691828893511890
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 100004}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bccf6352ba4284a099dc9c4676cc0654, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 10
+  jumpSpeed: 8
+  gravity: 20
