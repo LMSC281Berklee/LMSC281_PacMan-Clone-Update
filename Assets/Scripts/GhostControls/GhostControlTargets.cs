@@ -52,7 +52,8 @@ public class GhostControlTargets : MonoBehaviour {
 			} else {
 				ghostTransform.rotation = Quaternion.Euler (0, 90, 0);
 			}
-		} else if (!forwardObject) {
+		} 
+		if (!forwardObject) {
 			ghostTransform.position += ghostTransform.forward * movementSpeed * Time.deltaTime;
 		}
 		//if we must choose a direction we choose left first
@@ -60,7 +61,7 @@ public class GhostControlTargets : MonoBehaviour {
 			ghostTransform.transform.Rotate (0, 270, 0);
 		}
 		//or rotate right if spot is available, ghost will move forward on next cycle
-		else {
+		else if (!rightObject) {
 			ghostTransform.transform.Rotate (0, 90, 0);
 		}
 		ghostTransform.position += ghostTransform.forward * movementSpeed * Time.deltaTime;
