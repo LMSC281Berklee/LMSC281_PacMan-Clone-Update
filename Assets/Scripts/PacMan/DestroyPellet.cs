@@ -57,17 +57,28 @@ public class DestroyPellet : MonoBehaviour {
 			{
 				superPowered = true;
 
+		
 				Debug.Log("superPower"); //testing to make sure my condition works
 				counter -= Time.deltaTime;
 					
 					if (counter <= 0) 
-					{	
+					{
+						
 						superPowered = false;
 						Debug.Log ("normal");
+						
 					}
+			
+
 				}
+
+
+
 			}
+
+			
 	}
+
 }
 
 
