@@ -879,6 +879,9 @@ GameObject:
   m_Component:
   - component: {fileID: 105}
   - component: {fileID: 75}
+  - component: {fileID: 112}
+  - component: {fileID: 110}
+  - component: {fileID: 108}
   m_Layer: 0
   m_Name: Score
   m_TagString: Untagged
@@ -948,6 +951,17 @@ MeshRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingOrder: 0
+--- !u!114 &108
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 104}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 04994cd786ac04a66ad7ff1afec40788, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!65 &109
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -960,6 +974,17 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &110
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 104}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9efc1e79961ea4fec94eefc27ebdee69, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!33 &111
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -967,6 +992,17 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 106}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &112
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 104}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6135fe17720ca45e7bb8bf421527cfd4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &113
 Transform:
   m_ObjectHideFlags: 0
