@@ -14,6 +14,8 @@ public class Boundary : MonoBehaviour {
 	public Transform pelletPrefab; //holds the reference to the normal pellet to be eaten by the player
 	public Transform superPrefab; //holds the reference to the special pellet to be eaten by the player
 
+	public Transform tileHolder;	//will be the parent object of the tiles as they are built
+
 	void Awake () {
 
 		//read the map file into an array, each index is a separate line from the text file
@@ -43,13 +45,14 @@ public class Boundary : MonoBehaviour {
 				//use the offset and the character position, to determine the prefab placement
 				v.x = (j - j_off) * 2 + 1;
 
-				//build the correct prefab according to the character type in the file
+				//build the correct prefab according to the character type in the file, and associate it with the parent tileholder object
 				if (map[i][j].Equals ('X')) {
-					Instantiate(blockPrefab, v, Quaternion.identity);
+					(Instantiate(blockPrefab, v, Quaternion.identity)).transform.SetParent(tileHolder);
 				} else if (map[i][j].Equals ('.')) {
-					Instantiate (pelletPrefab, v, Quaternion.identity);
+					(Instantiate (pelletPrefab, v, Quaternion.identity)).transform.SetParent(tileHolder);
 				} else if (map[i][j].Equals ('O')) {
-					Instantiate (superPrefab, v, Quaternion.identity);
+					(Instantiate (superPrefab, v, Quaternion.identity)).transform.SetParent(tileHolder);
+
 				}
 			}
 		}
