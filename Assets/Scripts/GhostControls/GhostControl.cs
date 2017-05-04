@@ -7,7 +7,7 @@ using UnityEngine;
 using System.Collections;
 
 public class GhostControl : MonoBehaviour {
-
+	
 	//allow each enemy type to have different movement settings
 	public float howLong = 1.0f;
 	public float howFast = 8.0f;
@@ -17,7 +17,7 @@ public class GhostControl : MonoBehaviour {
 
 	//give each enemy a place to move to
 	private Vector3 direction;
-	
+
 
 	// Update is called once per frame
 	void Update () {
