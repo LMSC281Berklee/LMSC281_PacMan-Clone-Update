@@ -16,8 +16,12 @@ public class ColorFlash : MonoBehaviour {
 	public Renderer rend3;
 	public Renderer rend4;
 
+	public Renderer tempRend;
+
 
 	void Start() {
+
+		tempRend = this.GetComponent<Renderer>;
 		rend1 = GameObject.Find("Blinky").GetComponent<Renderer>();
 		rend2 = GameObject.Find("Inky").GetComponent<Renderer>();
 		rend3 = GameObject.Find("Pinky").GetComponent<Renderer>();
@@ -25,14 +29,18 @@ public class ColorFlash : MonoBehaviour {
 
 	}
 	void Update() {
+		if (DestroyPellet.superPowered = false) {
 
-	rend1.material.color = new Color(255,0,28,191);
+			this.material.color.GetComponent<Renderer>() = tempRend;
 
-	rend2.material.color = new Color(69,231,255,199);
-
-	rend3.material.color = new Color(255,126,212,225);
-
-	rend4.material.color = new Color(186,145,62,213);
+//			rend1.material.color = new Color (255, 0, 28, 191);
+//
+//			rend2.material.color = new Color (69, 231, 255, 199);
+//
+//			rend3.material.color = new Color (255, 126, 212, 225);
+//
+//			rend4.material.color = new Color (186, 145, 62, 213);
+		}
 
 		if (DestroyPellet.counter > 0) {
 			
@@ -46,12 +54,13 @@ public class ColorFlash : MonoBehaviour {
 
 				rend4.material.color = Color.Lerp (ColorStart, colorEnd, lerp);
 
-			
-			
 		}
 
 
 		}
+
+
+
 	}
 
 	
