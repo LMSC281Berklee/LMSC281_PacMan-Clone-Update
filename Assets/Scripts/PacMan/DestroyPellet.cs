@@ -5,31 +5,68 @@
 
 using UnityEngine;
 using System.Collections;
+using UnityEngine.UI;
 
 public class DestroyPellet : MonoBehaviour {
 
 	//use to display the player score
 	public GUIText scoreDisplay;
 
+
+
 	//determine individual prefab values
 	public int smallPelletScore = 10;
 	public int superPelletScore = 100;
+	static public int ghostEatingScore = 500;
+	static public bool superPowered = false;
+	static public float counter = 20;
 
 	//starting score
-	private int score = 0;
+	static public int score = 0;
 
 	//send the score to the screen on every update cycle
 	void Update () {
 		scoreDisplay.text = "Score: " + score;
+		if (superPowered) {
+			counter -= Time.deltaTime;
+			Debug.Log (counter);
+		}
+		if (counter <= 0) {
+			counter = 20;
+			superPowered = false;
+			Debug.Log ("normal");
+		}
 	}
 
 	//when the player runs into a pellet, add to the score and then destroy
-	void OnTriggerEnter (Collider other) {
-		if (other.name == "BasicPellet(Clone)") {
+	void OnTriggerEnter (Collider other) 
+	{
+		if (other.name == "BasicPellet(Clone)") 
+		{
 			score += smallPelletScore;
-		} else if (other.name == "SuperPellet(Clone)") {
+			Destroy (other.gameObject);
+		} 
+		else if (other.name == "SuperPellet(Clone)") 
+		{
 			score += superPelletScore;
-		}
-		Destroy (other.gameObject);
+			Destroy (other.gameObject);
+
+			if (superPowered == false) 
+			{
+				superPowered = true;
+
+				Debug.Log("superPower"); //testing to make sure my condition works
+					
+					if (counter <= 0) 
+					{	
+						superPowered = false;
+						Debug.Log ("normal");
+					}
+				}
+			}
 	}
 }
+
+
+	
+

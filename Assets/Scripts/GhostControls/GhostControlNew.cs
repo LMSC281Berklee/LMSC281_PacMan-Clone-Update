@@ -27,8 +27,8 @@ public class GhostControlNew : MonoBehaviour {
 //	private GameObject target;
 //	private Vector3 targetPoint;
 //	private Quaternion targetRotation;
-//
-//	//need a check to see if a wall is blocking a path
+
+	//need a check to see if a wall is blocking a path
 	bool leftObject;
 	bool rightObject;
 	bool forwardObject;
@@ -36,7 +36,7 @@ public class GhostControlNew : MonoBehaviour {
 	public bool inGhostHouse = true;
 
 	Vector3 origin = new Vector3(0,0,6);
-	
+
 	//initialize the ghost's transform
 	void Awake () {
 		myTransform = transform;
@@ -136,5 +136,18 @@ public class GhostControlNew : MonoBehaviour {
 //				ghostTransform.transform.Rotate (0, 180, 0);
 //				ghostTransform.position += ghostTransform.forward * movementSpeed * Time.deltaTime;
 //			}
+	}
+
+	void OnTriggerEnter (Collider other)
+	{
+		if (DestroyPellet.superPowered == true && DestroyPellet.counter < 20) 
+		{
+
+			if (other.tag == "Player") 
+			{
+				myTransform.position = new Vector3 (-5, 1, 4);
+			}
+				
+		}
 	}
 }
