@@ -4,7 +4,7 @@ using System.Collections.Generic;
 
 public class MenuController : MonoBehaviour {
 
-	string playerName="";
+	string playerName="0";
 	string score="";
 	List<Scores> highscore;
 
