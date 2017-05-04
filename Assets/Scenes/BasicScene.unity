@@ -112,9 +112,14 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
+<<<<<<< Updated upstream
 
   m_IsActive: 0
 
+=======
+<<<<<<< HEAD
+  m_IsActive: 1
+>>>>>>> Stashed changes
 --- !u!136 &20
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -128,8 +133,15 @@ CapsuleCollider:
   m_Radius: 0.5
   m_Height: 1.9999999
   m_Direction: 1
+<<<<<<< Updated upstream
   m_Center: {x: 0, y: 0, z: 0}
 
+=======
+  m_Center: {x: 0.000000059604645, y: 0, z: -0.00000008940697}
+=======
+  m_IsActive: 0
+>>>>>>> 2017_Spring_Master
+>>>>>>> Stashed changes
 --- !u!143 &21
 CharacterController:
   m_ObjectHideFlags: 0
@@ -427,7 +439,13 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
+<<<<<<< Updated upstream
 
+=======
+<<<<<<< HEAD
+  m_IsActive: 1
+=======
+>>>>>>> Stashed changes
   m_IsActive: 0
 --- !u!54 &50
 Rigidbody:
@@ -444,7 +462,11 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 84
   m_CollisionDetection: 0
+<<<<<<< Updated upstream
 
+=======
+>>>>>>> 2017_Spring_Master
+>>>>>>> Stashed changes
 --- !u!143 &51
 CharacterController:
   m_ObjectHideFlags: 0
