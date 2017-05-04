@@ -34,8 +34,7 @@ public class PlayerMove : MonoBehaviour {
             isKeyPressed = true;
 
             horizontalMovement = Input.GetAxis("Horizontal");
-            verticalMovement = Input.GetAxis("Vertical");
-            Debug.Log(horizontalMovement + verticalMovement);       
+            verticalMovement = Input.GetAxis("Vertical");   
         }
         if (isKeyPressed || grounded)
         {
