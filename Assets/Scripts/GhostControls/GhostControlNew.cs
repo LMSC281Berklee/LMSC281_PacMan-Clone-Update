@@ -10,8 +10,8 @@ using System.Collections;
 public class GhostControlNew : MonoBehaviour {
 
 	//these variables allow for flexibility in the ghosts' movement and rotation speed, they are public so that they can be applied differently, per ghost
-	int movementSpeed = 3;
-	int rotationSpeed = 3;
+	int movementSpeed = 8;
+	//int rotationSpeed = 3;
 
 	//we only want our ghosts to chase when the player is in range, which can be set individually for each ghost
 //	int detectionRange = 10;
@@ -24,8 +24,8 @@ public class GhostControlNew : MonoBehaviour {
 	Transform myTransform;
 
 //	//each ghost targets a different area around the player
-//	private GameObject target;
-//	private Vector3 targetPoint;
+	private GameObject target;
+	private Vector3 targetPoint;
 //	private Quaternion targetRotation;
 //
 //	//need a check to see if a wall is blocking a path
@@ -34,6 +34,8 @@ public class GhostControlNew : MonoBehaviour {
 	bool forwardObject;
 
 	public bool inGhostHouse = true;
+
+	public bool stuck = false;
 
 	Vector3 origin = new Vector3(0,0,6);
 	
@@ -45,16 +47,18 @@ public class GhostControlNew : MonoBehaviour {
 	void Start () {
 		//find the location of the player when the level starts, make sure to set the tag in the inspector
 		playerTransform = GameObject.FindGameObjectWithTag ("Player").transform;
-		//target = GameObject.FindGameObjectWithTag ("Player");
+		target = GameObject.FindGameObjectWithTag ("Player");
 	}
 	
 	// Update is called once per frame
 	void Update () {
 
+		targetPoint = new Vector3 ((target.transform.position.x), 0, (target.transform.position.z)) - transform.position;
+
 		//check for walls around the ghost
-		forwardObject = Physics.Raycast (transform.position, transform.TransformDirection(Vector3.forward), 1);
-		rightObject = Physics.Raycast (transform.position, transform.TransformDirection(Vector3.right), 1);
-		leftObject = Physics.Raycast (transform.position, transform.TransformDirection(Vector3.left), 1);
+		forwardObject = Physics.Raycast (transform.position, transform.TransformDirection (Vector3.forward), 1);
+		rightObject = Physics.Raycast (transform.position, transform.TransformDirection (Vector3.right), 1);
+		leftObject = Physics.Raycast (transform.position, transform.TransformDirection (Vector3.left), 1);
 
 
 		//JC when the game starts... we need tp update this if we have time
@@ -65,24 +69,106 @@ public class GhostControlNew : MonoBehaviour {
 		//JC when you are in the ghostHouse, move to get out
 		//JC this movement will need to be adjusted if we have time
 		if (inGhostHouse) {
-			transform.position = Vector3.MoveTowards(transform.position, origin, Time.deltaTime);
-		}
-		//JC keep ghost moving forward when other paths are blocked
-		else if (!forwardObject) {
-			myTransform.position = myTransform.position + myTransform.forward * movementSpeed * Time.deltaTime;
-		}
+			transform.position = Vector3.MoveTowards (transform.position, origin, Time.deltaTime);
+		} 
 
-		//if forward is blocked check to the right and turn if it isn't blocked and if pacman is to the right
-		else if (!rightObject && (myTransform.position.x < playerTransform.position.x) && (Mathf.Round(transform.rotation.y) != 90)) {
-			transform.rotation *= Quaternion.Euler(0, 90, 0); // this add a 90 degrees Y rotation
-		}
+		if(!inGhostHouse){
 
-		//if forward is blocked and right are blocked and/or the player is not to the right, turn to the left
-		else if (!leftObject) {
-			transform.rotation *= Quaternion.Euler(0, 270, 0); // this adds a 270 degrees Y rotation
-		}
-		else {
-			myTransform.position = myTransform.position + myTransform.forward * movementSpeed * Time.deltaTime;
+
+//			if (!leftObject && (Mathf.Round (myTransform.rotation.y) != -90) && myTransform.position.z > playerTransform.position.z) {
+//				transform.rotation *= Quaternion.Euler (0, -90, 0);
+//				Debug.Log ("turn");
+//				while (!forwardObject) {
+//					myTransform.position += myTransform.forward * movementSpeed * Time.deltaTime;
+//					Debug.Log ("while");
+//				}
+//			}
+
+//				else if (!forwardObject) {
+//
+//				myTransform.position += myTransform.forward * movementSpeed * Time.deltaTime;
+//				}
+//			if (myTransform.position.x < playerTransform.position.x) {
+//
+//				if (!rightObject && (Mathf.Round(transform.rotation.y) != 90)) {
+//					if (!forwardObject) {
+//									myTransform.position += myTransform.forward * movementSpeed * Time.deltaTime;
+//								}
+//					transform.rotation *= Quaternion.Euler (0, 90, 0);
+//				} else if (!leftObject) {
+//					if (!forwardObject) {
+//						myTransform.position += myTransform.forward * movementSpeed * Time.deltaTime;
+//					}
+//					transform.rotation *= Quaternion.Euler (0, 270, 0);
+//				} else {
+//					myTransform.position += myTransform.forward * movementSpeed * Time.deltaTime;
+//				}
+//
+//			}
+
+		
+
+					
+
+					
+
+				//if forward is blocked and right are blocked and/or the player is not to the right, turn to the left
+//				else if (!leftObject && (Mathf.Round (transform.rotation.y) == 270)) {
+//					transform.rotation *= Quaternion.Euler (0, -90, 0); // this adds a 270 degrees Y rotation
+//				} 
+			if (!forwardObject) {
+				//Debug.Log ("forward" + " rObj: " + rightObject + " lObj: " + leftObject + " fObj: " + forwardObject);
+				Debug.Log ("y: " + Mathf.Round( myTransform.rotation.y));
+				if ((Mathf.Round (transform.rotation.y) == 90) && (myTransform.position.z > playerTransform.position.z && !rightObject)  && !forwardObject) {
+					transform.rotation *= Quaternion.Euler (0, 90, 0);
+					Debug.Log ("1");
+				} else if ((Mathf.Round (transform.rotation.y) == 270) && (myTransform.position.z < playerTransform.position.z && !rightObject) && !forwardObject) {
+					transform.rotation *= Quaternion.Euler (0, 90, 0);
+					Debug.Log ("2");
+				} else if ((Mathf.Round (transform.rotation.y) == 270) && (myTransform.position.z > playerTransform.position.z && !leftObject) && !forwardObject) {
+					transform.rotation *= Quaternion.Euler (0, -90, 0);
+					Debug.Log ("3");
+				} else if ((Mathf.Round (transform.rotation.y) == 90) && (myTransform.position.z < playerTransform.position.z && !leftObject) && !forwardObject) {
+					transform.rotation *= Quaternion.Euler (0, -90, 0);
+					Debug.Log ("4");
+				}
+				myTransform.position += myTransform.forward * movementSpeed * Time.deltaTime;
+
+			
+			}else if (!rightObject && (myTransform.position.x < playerTransform.position.x) && (Mathf.Round(transform.rotation.y) != 90)) {
+						transform.rotation *= Quaternion.Euler(0, 90, 0);// this add a 90 degrees Y rotation
+					}
+			
+					//if forward is blocked and right are blocked and/or the player is not to the right, turn to the left
+					else if (!leftObject) {
+						transform.rotation *= Quaternion.Euler(0, 270, 0); // this adds a 270 degrees Y rotation
+					}
+					else {
+						myTransform.position = myTransform.position + myTransform.forward * movementSpeed * Time.deltaTime;
+					}
+
+
+
+
+
+
+		//DEFAULT
+//		if (!forwardObject) {
+//			myTransform.position += myTransform.forward * movementSpeed * Time.deltaTime;
+//		}
+//		//
+//		//if forward is blocked check to the right and turn if it isn't blocked and if pacman is to the right
+//		else if (!rightObject && (myTransform.position.x < playerTransform.position.x) && (Mathf.Round(transform.rotation.y) != 90)) {
+//			transform.rotation *= Quaternion.Euler(0, 90, 0);// this add a 90 degrees Y rotation
+//		}
+//
+//		//if forward is blocked and right are blocked and/or the player is not to the right, turn to the left
+//		else if (!leftObject) {
+//			transform.rotation *= Quaternion.Euler(0, 270, 0); // this adds a 270 degrees Y rotation
+//		}
+//		else {
+//			myTransform.position = myTransform.position + myTransform.forward * movementSpeed * Time.deltaTime;
+//		}
 		}
 
 		//use different targets based on the ghost character
@@ -138,3 +224,4 @@ public class GhostControlNew : MonoBehaviour {
 //			}
 	}
 }
+
