@@ -1391,6 +1391,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 234931547}
+  - component: {fileID: 234931548}
   m_Layer: 0
   m_Name: Pinky_waypoint4
   m_TagString: Untagged
@@ -1411,6 +1412,18 @@ Transform:
   m_Father: {fileID: 221366733}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!135 &234931548
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 234931546}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.5
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &287919207
 GameObject:
   m_ObjectHideFlags: 0
@@ -1611,6 +1624,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 810760195}
+  - component: {fileID: 810760196}
   m_Layer: 0
   m_Name: Pinky_waypoint5
   m_TagString: Untagged
@@ -1631,6 +1645,18 @@ Transform:
   m_Father: {fileID: 221366733}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!135 &810760196
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 810760194}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.5
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &925356016
 GameObject:
   m_ObjectHideFlags: 0
@@ -1818,6 +1844,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 1293435516}
+  - component: {fileID: 1293435517}
   m_Layer: 0
   m_Name: Pinky_waypoint2
   m_TagString: Untagged
@@ -1838,6 +1865,18 @@ Transform:
   m_Father: {fileID: 221366733}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!135 &1293435517
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1293435515}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.5
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &1315216850
 GameObject:
   m_ObjectHideFlags: 0
@@ -1846,6 +1885,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 1315216851}
+  - component: {fileID: 1315216852}
   m_Layer: 0
   m_Name: Pinky_waypoint3
   m_TagString: Untagged
@@ -1866,6 +1906,18 @@ Transform:
   m_Father: {fileID: 221366733}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!135 &1315216852
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1315216850}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.5
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &1476004983
 GameObject:
   m_ObjectHideFlags: 0
@@ -1964,6 +2016,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 1688400115}
+  - component: {fileID: 1688400116}
   m_Layer: 0
   m_Name: Pinky_waypoint1
   m_TagString: Untagged
@@ -1984,6 +2037,18 @@ Transform:
   m_Father: {fileID: 221366733}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!135 &1688400116
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1688400114}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.5
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &1706159722
 GameObject:
   m_ObjectHideFlags: 0
@@ -2060,6 +2125,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 1740216228}
+  - component: {fileID: 1740216229}
   m_Layer: 0
   m_Name: Pinky_waypoint6
   m_TagString: Untagged
@@ -2080,6 +2146,18 @@ Transform:
   m_Father: {fileID: 221366733}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!135 &1740216229
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1740216227}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.5
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &1810451909
 GameObject:
   m_ObjectHideFlags: 0
